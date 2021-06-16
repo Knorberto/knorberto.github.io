@@ -1,0 +1,48 @@
+.graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Helvetica";
+    cursor: pointer;
+}
+
+h1 {
+    width: 100%;
+}
+
+.graph * {
+    transition: all .3s ease;
+}
+
+.graph:hover {
+    .data {
+        transform: scale(2);
+        transform-origin: 50% 50%;
+        fill: lighten(#0074d9, 10);
+    }
+
+    .bg {
+        transform: scaleY(.0);
+        transform-origin: 50% 50%;
+    }
+
+    text {
+        opacity: 0;
+    }
+
+    .markers {
+        opacity: 0;
+    }
+
+    .result {
+        opacity: 1;
+        font-size: 80px;
+        font-weight: bold;
+        animation: flicker 2s ease infinite;
+    }
+
+}
+
+.result {
+    opacity: 0;
+}
