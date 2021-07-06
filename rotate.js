@@ -22,8 +22,8 @@
     SOFTWARE.
 */
 
-const width = 1024;
-const height = 600;
+const width = 950;
+const height = 500;
 const config = {
     speed: 0.005,
     verticalTilt: -50,
@@ -31,8 +31,8 @@ const config = {
 }
 let locations = [];
 const svg = d3.select('svg')
-.attr("preserveAspectRatio", "xMinYMin meet")
-.attr("viewBox", "0 0 1024 600")
+.attr("preserveAspectRatio", "xMidYMin slice")
+.attr("viewBox", "0 0 950 500")
 .classed("svg-content", true);
 ;
 const markerGroup = svg.append('g');
