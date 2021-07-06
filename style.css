@@ -1,107 +1,14 @@
-
-  .graph {
-    display: flex;
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    font-family: "Helvetica";
-    cursor: pointer;
-  }
-  
-  h1 {
-    width: 100%;
-  }
-  
-  .graph * {
-    transition: all 0.3s ease;
-  }
-  
-  .graph:hover .data {
-    transform: scale(2);
-    transform-origin: 50% 50%;
-    fill: #0d8eff;
-  }
-  .graph:hover .bg {
-    transform: scaleY(0);
-    transform-origin: 50% 50%;
-  }
-  .graph:hover text {
-    opacity: 0;
-  }
-  .graph:hover .markers {
-    opacity: 0;
-  }
-  .graph:hover .result {
-    opacity: 1;
-    font-size: 80px;
-    font-weight: bold;
-    -webkit-animation: flicker 2s ease infinite;
-            animation: flicker 2s ease infinite;
-  }
-  
-  .result {
-    opacity: 0;
-  }
-
-
-/* container */
-.container {
-  display: block; 
-  margin: auto;
-	overflow: hidden;
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: top;
+  overflow: hidden;
 }
-
-/* leaderboard */
-.leaderboard {
-	background: linear-gradient(to bottom, #3a404d, #181c26);
-}
-
-/* head */
-.leaderboard .head {
-	color: snow;
-	font-size: 20px;
-	text-align: center;
-}
-.leaderboard .head h1 {
-	display: inline-block;
-	margin-left: 4px;
-}
-
-/* body */
-.leaderboard .body {
-	color: snow;
-	font-size: 16px;
-}
-.leaderboard ol {
-	counter-reset: number;
-}
-.leaderboard li {
-	padding: 16px;  
-  margin-right: 40px;
-	display: flex;
-}
-.leaderboard li mark {
-	flex-grow: 1;
-	color: snow;
-	background-color: transparent;
-}
-.leaderboard li:before {
-	counter-increment: number; 
-	content: counter(number) "."; 
-	margin-right: 4px;
-}
-.leaderboard li:nth-child(1) {
-	background: #fa6855;
-}
-.leaderboard li:nth-child(2) {
-	background: #e0574f;
-}
-.leaderboard li:nth-child(3) {
-	background: #d7514d;
-}
-.leaderboard li:nth-child(4) {
-	background: #cd4b4b;
-}
-.leaderboard li:nth-child(5) {
-	background: #c24448;
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -31,7 +31,10 @@ const config = {
 }
 let locations = [];
 const svg = d3.select('svg')
-    .attr('width', width).attr('height', height);
+.attr("preserveAspectRatio", "xMinYMin meet")
+.attr("viewBox", "0 0 1024 600")
+.classed("svg-content", true);
+;
 const markerGroup = svg.append('g');
 const projection = d3.geoOrthographic();
 const initialScale = projection.scale();
@@ -121,8 +124,8 @@ function drawLine() {
             gdistance = d3.geoDistance(coordinate, projection.invert(center));
             return gdistance > 1.57 ? 'none' : 'steelblue';
         })
-
     markerGroup.each(function () {
         this.parentNode.appendChild(this);
     });
 }
+
