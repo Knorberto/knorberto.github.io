@@ -22,8 +22,8 @@
     SOFTWARE.
 */
 
-const width = 450;
-const height = 200;
+const width = 1024;
+const height = 600;
 const config = {
     speed: 0.005,
     verticalTilt: -50,
