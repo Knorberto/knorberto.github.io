@@ -4,6 +4,12 @@
 <head>
     <script type="text/javascript" src="https://unpkg.com/vis-timeline/standalone/umd/vis-timeline-graph2d.min.js">
     </script>
+    <link href="https://unpkg.com/vis-timeline/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    
+</head>
+
+<body>
+    <div id="visjs"></div>
     <script type="text/javascript">
         // using the DOM element 
         var container = document.getElementById('visjs');
@@ -50,10 +56,6 @@
         // Create a Timeline
         var timeline = new vis.Timeline(container, items, options);
     </script>
-</head>
-
-<body>
-    <div id="visjs"></div>
     <div id="container" class="svg-container">
         <svg></svg>
     </div>
