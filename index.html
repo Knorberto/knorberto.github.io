@@ -2,31 +2,58 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="https://unpkg.com/vis-timeline/standalone/umd/vis-timeline-graph2d.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-timeline/standalone/umd/vis-timeline-graph2d.min.js">
+    </script>
     <script type="text/javascript">
-        // DOM element where the Timeline will be attached
-        const container = document.getElementById("visualization");
-        
-        // Create a DataSet (allows two way data-binding)
-        const items = new vis.DataSet([
-          { id: 1, content: "item 1", start: "2014-04-20" },
-          { id: 2, content: "item 2", start: "2014-04-14" },
-          { id: 3, content: "item 3", start: "2014-04-18" },
-          { id: 4, content: "item 4", start: "2014-04-16", end: "2014-04-19" },
-          { id: 5, content: "item 5", start: "2014-04-25" },
-          { id: 6, content: "item 6", start: "2014-04-27", type: "point" }
+        // using the DOM element 
+        var container = document.getElementById('visjs');
+        // create a DataSet and fill with data 
+        var items = new vis.DataSet([{
+                id: 1,
+                content: 'day 0',
+                start: '1976-03-07',
+                type: 'point'
+            },
+            {
+                id: 2,
+                content: 'my first CI',
+                start: '1990-03-10'
+            },
+            {
+                id: 3,
+                content: 'college',
+                start: '1990-09-15',
+                end: '1994-09-15'
+            },
+            {
+                id: 4,
+                content: 'licensed management',
+                start: '1999-09-15',
+                type: 'point'
+            },
+            {
+                id: 5,
+                content: 'my first computer',
+                start: '2002-04-25'
+            },
+            {
+                id: 6,
+                content: 'Pascal language',
+                start: '1993-06-03',
+                type: 'point'
+            }
         ]);
-        
+
         // Configuration for the Timeline
-        const options = {};
-        
+        var options = {};
+
         // Create a Timeline
-        const timeline = new vis.Timeline(container, items, options);
-        </script>
+        var timeline = new vis.Timeline(container, items, options);
+    </script>
 </head>
 
 <body>
-    <div id="visualization"></div>
+    <div id="visjs"></div>
     <div id="container" class="svg-container">
         <svg></svg>
     </div>
