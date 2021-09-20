@@ -26,7 +26,7 @@ const width = 950;
 const height = 500;
 const config = {
     speed: 0.005,
-    verticalTilt: -40,
+    verticalTilt: -30,
     horizontalTilt: 0
 }
 let locations = [];
