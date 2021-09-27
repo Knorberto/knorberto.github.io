@@ -117,8 +117,10 @@ function drawLine() {
         .merge(markers)
         .attr('x1', d => projection([d.longitude, d.latitude])[0])
         .attr('y1', d => projection([d.longitude, d.latitude])[1])
-        .attr('x2', d => projection([8.660185, 49.885939])[0])
-        .attr('y2', d => projection([8.660185, 49.885939])[1])
+        //.attr('x2', d => projection([8.660185, 49.885939])[0])
+        //.attr('y2', d => projection([8.660185, 49.885939])[1])
+        .attr('x2', d => projection([0, 0])[0])
+        .attr('y2', d => projection([0, 0])[1])
         .attr('stroke', d => {
             const coordinate = [d.longitude, d.latitude];
             gdistance = d3.geoDistance(coordinate, projection.invert(center));
