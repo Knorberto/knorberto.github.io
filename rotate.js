@@ -127,7 +127,6 @@ function drawLine() {
             gdistance = d3.geoDistance(coordinate, projection.invert(center));
             return gdistance > 1.57 ? 'none' : 'steelblue';
         })
-    alert(lastlo , lastla);
     lastlo = d.longitude;
     lastla = d.latitude;
     markerGroup.each(function () {
