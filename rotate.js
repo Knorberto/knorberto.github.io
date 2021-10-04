@@ -21,7 +21,8 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 */
-
+var lastlo = 0;
+var lastla = 0;
 const width = 950;
 const height = 500;
 const config = {
@@ -109,8 +110,6 @@ function drawMarkers() {
 
 
 function drawLine() {
-    var lastlo = 0;
-    var lastla = 0;
     const markers = markerGroup.selectAll('line')
         .data(locations);
     markers
