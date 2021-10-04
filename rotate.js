@@ -109,6 +109,8 @@ function drawMarkers() {
 
 
 function drawLine() {
+    var lastlo = 0;
+    var lastla = 0;
     const markers = markerGroup.selectAll('line')
         .data(locations);
     markers
@@ -119,13 +121,15 @@ function drawLine() {
         .attr('y1', d => projection([d.longitude, d.latitude])[1])
         //.attr('x2', d => projection([8.660185, 49.885939])[0])
         //.attr('y2', d => projection([8.660185, 49.885939])[1])
-        .attr('x2', d => projection([0, 0])[0])
-        .attr('y2', d => projection([0, 0])[1])
+        .attr('x2', d => projection([lastlo, lastla])[0])
+        .attr('y2', d => projection([lastlo, lastla])[1])
         .attr('stroke', d => {
             const coordinate = [d.longitude, d.latitude];
             gdistance = d3.geoDistance(coordinate, projection.invert(center));
             return gdistance > 1.57 ? 'none' : 'steelblue';
         })
+    lastlo = d.longitude;
+    lastla = d.latitude;
     markerGroup.each(function () {
         this.parentNode.appendChild(this);
     });
